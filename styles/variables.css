@@ -1,1 +1,12 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --Themes-background: #fff ;
+  --Themes-mainColor: #000;
+  --MainFont: Inter;
+  --AccentFont: PressStart2P;
+  --FontWeightNormal: 400;
+  --FontWeightBold: 700;
+  --border-size: 2px;
+  --fontSizeSmall: 14px;
+  --fontSizeDefault: 18px;
+}

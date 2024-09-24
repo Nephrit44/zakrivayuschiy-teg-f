@@ -22,8 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     themeButtons.forEach((item) => {
       if (item.getAttribute('data-theme') === theme) {
         item.setAttribute('disabled', true);
+        item.classList.add('active')
       } else {
         item.removeAttribute('disabled');
+        item.classList.remove('active')
       }
     });
   }

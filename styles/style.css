@@ -1,6 +1,7 @@
 /* Здесь вы напишете основную часть стилей страницы.
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые 
+классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
 ✦ like-icon — для svg-иконки анимированного сердца
@@ -12,9 +13,171 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
+
+Напоминалка:
+1. Допиши альтернативный шрифт
+2. Не совсм понятно зачем нужно четыре переменных для шрифтов, когда можно обойтись двумя?
+
+
 */
 
 .page {
+  font-family: var(--MainFont);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-variation-settings: "wght" var(--FontWeightNormal);
 }
+
+
+/*START HEADER*/
+
+  .header {
+    margin: 102px 0;
+    border: var(--border-size) solid currentColor;
+    padding: 120px 0 25px;
+    color: var(--Themes-mainColor, #000);
+    background-color: var(--Themes-background, #fff);
+
+    & .header__title {
+      padding-block-end: 20px;
+      color: currentColor;
+      font-family: var(--AccentFont);
+      font-weight: var(--FontWeightNormal);
+      font-size: 49px;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    & .header__subtitle {
+      padding-block-end: 25px;
+      color: currentColor;
+      font-family: var(--AccentFont);
+      font-weight: var(--FontWeightNormal);
+      font-size: 14px;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    & .header__theme-menu {
+      color: currentColor;
+      font-family: var(--AccentFont);
+      font-weight: var(--FontWeightNormal);
+      font-size: 14px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    & .theme-menu__list {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      gap: 14px;
+      max-width: 100px;
+      margin: 0 auto;
+    }
+
+    & .theme-menu__button {
+      position: relative;
+      padding-inline-start: 19px;
+      color: currentColor;
+      font-size: var(--fontSizeSmall);
+      text-transform: capitalize;
+      text-transform: uppercase;
+      transition: opacity .3s;
+    }
+
+    & .active {
+      opacity: 0.6;
+    }
+
+    & .active::before {
+      content: url(../svg/arrow.svg);
+      position: absolute;
+      animation-name: arrowMove;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      animation-duration: 0.5s;
+    }
+
+  }
+
+/*END HEADER*/
+
+/*START CARD*/
+  .card {
+    color: var(--Themes-mainColor, #000);
+    background: var(--Themes-background, #FFF);
+
+    & .card__item {
+     display: flex;
+     flex-direction: column;
+     border: var(--border-size) solid currentColor;
+    }
+
+    & .card__title {
+      padding: 4px 10px;
+      color: currentColor;
+      font-family: var(--MainFont);
+      font-size: var(--fontSizeDefault, 18px);
+      font-variation-settings: "wght" var(--FontWeightBold);
+      border-block-end: var(--border-size) solid currentColor;
+    }
+
+    & .card__image {
+      object-fit: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    & .card__content {
+      display: flex;
+      flex-direction: column;
+      gap: 27px;
+      padding: 25px;
+      border-block-start: var(--border-size) solid currentColor;
+    }
+
+    & .card__text {
+      color: currentColor;
+      font-family: var(--MainFont);
+      font-size: var(--fontSizeDefault, 18px);
+      font-variation-settings: "wght" var(--FontWeightNormal);
+    }
+
+    & .card__like {
+      align-self: flex-end;
+      padding: 9px 17px;
+      font-family: var(--AccentFont);
+      font-weight: var(--FontWeightNormal);
+      line-height: 90%;
+      text-transform: capitalize;
+    }
+  }
+
+/*END CARD*/
+
+
+/*Animation sector*/
+
+/*Стрелочка в меню*/
+@keyframes arrowMove {
+  0% {
+    inset-inline-start: 0;
+  }
+  25% {
+    inset-inline-start: 2px;
+  }
+  50% {
+    inset-inline-start: 4px;
+  }
+  75% {
+    inset-inline-start: 2px;
+  }
+  100% {
+    inset-inline-start: 0;
+  }
+} 
