@@ -12,3 +12,78 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+/*Стрелочка в меню*/
+@keyframes arrowMove {
+  0% {
+    inset-inline-start: 0;
+  }
+  25% {
+    inset-inline-start: 2px;
+  }
+  50% {
+    inset-inline-start: 4px;
+  }
+  75% {
+    inset-inline-start: 2px;
+  }
+  100% {
+    inset-inline-start: 0;
+  }
+}
+
+/*Сердце возле кнопки*/
+
+@keyframes core {
+    
+    0% { 
+        fill: transparent;
+    }
+
+    100% { 
+        fill: #FF0000;
+    }
+
+}
+
+@keyframes sparks {
+    0% { 
+        fill: transparent;
+    }
+    50% { 
+        fill: #FF0000;
+    }
+    100%{
+        fill: transparent;
+    }
+}
+
+@keyframes main-body {
+    0% { 
+        fill: transparent;
+        transform: scale(1.0);
+    }
+    50% { 
+        fill: #FF0000;
+        transform: scale(1.1);
+    }
+    100% {
+        fill: #FF0000;
+        transform: scale(1.0);
+    }
+}
+
+@keyframes contur {
+    0% { 
+        fill: #000;
+        transform: scale(1.0);
+    }
+    50% { 
+        fill: #FF0000;
+        transform: scale(1.1);
+    }
+    100% {
+        fill: #FF0000;
+        transform: scale(1.0);
+    }
+}

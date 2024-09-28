@@ -1,12 +1,27 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --Themes-background: #fff ;
+  --Themes-background: #fff;
   --Themes-mainColor: #000;
+
+  --bg-line-color-start: #fff;
+  --bg-line-color-end: transparent;
+
+  --bg-cover-start: #E7E7E7;
+  --bg-cover-end: #1A1A1A;
   --MainFont: Inter;
   --AccentFont: PressStart2P;
   --FontWeightNormal: 400;
   --FontWeightBold: 700;
   --border-size: 2px;
+
+  --fontSizeTitle: 49px;
   --fontSizeSmall: 14px;
   --fontSizeDefault: 18px;
+  
+  --main-bg: url("../images/main-bg.jpg");
+  --bg-line-size: 4px; /*Ширина полоски для декорирования фона*/
+  --transition-times: 2s;
+
+  --text-stroke-color: #fff;
+  --text-stroke-width: 1px;
 }

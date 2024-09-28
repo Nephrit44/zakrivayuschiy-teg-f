@@ -4,12 +4,16 @@
 классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
+
+✦ like-icon — для svg-иконки анимированного сердца (сделано)
 ✦ card__like-button — для кнопки Like рядом с иконкой
+
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+
 ✦ button__text — для обозначения текстового элемента внутри кнопки
+
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
@@ -20,8 +24,10 @@
 
 
 */
+
 .container {
-  max-width: 379px;
+  min-width: 379px;
+  max-width: 696px;
   margin: 0 auto;
 }
 
@@ -30,24 +36,47 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--FontWeightNormal);
+  background-color: var(--Themes-background, #fff);
 }
 
 /*START HEADER*/
 
 .header {
-  margin: 102px 0;
-  border: var(--border-size) solid currentColor;
-  padding: 120px 0 25px;
-  color: var(--Themes-mainColor, #000);
-  background-color: var(--Themes-background, #fff);
+  padding: 102px 0;
+  background-image: repeating-linear-gradient(
+      90deg,
+      var(--bg-line-color-start),
+      var(--bg-line-color-start) var(--bg-line-size),
+      var(--bg-line-color-end) var(--bg-line-size),
+      var(--bg-line-color-end) calc(var(--bg-line-size) * 2)
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--bg-line-color-start),
+      var(--bg-line-color-start) var(--bg-line-size),
+      var(--bg-line-color-end) var(--bg-line-size),
+      var(--bg-line-color-end) calc(var(--bg-line-size) * 2)
+    ),
+    linear-gradient(180deg, var(--bg-cover-start) 0%, var(--bg-cover-end) 50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+
+  & .header__content {
+    border: var(--border-size) solid currentColor;
+    padding: 120px 0 25px;
+    color: var(--Themes-mainColor, #000);
+    background-color: var(--Themes-background, #fff);
+  }
 
   & .header__title {
     padding-block-end: 20px;
     color: currentColor;
     font-family: var(--AccentFont);
-    font-weight: var(--FontWeightNormal);
-    font-size: 49px;
-    line-height: 1;
+    font-variation-settings: "wght" var(--FontWeightBold);
+    font-size: var(--fontSizeTitle);
     text-align: center;
     text-transform: uppercase;
   }
@@ -56,9 +85,8 @@
     padding-block-end: 25px;
     color: currentColor;
     font-family: var(--AccentFont);
-    font-weight: var(--FontWeightNormal);
-    font-size: 14px;
-    line-height: 1;
+    font-variation-settings: "wght" var(--FontWeightNormal);
+    font-size: var(--fontSizeSmal);
     text-align: center;
     text-transform: uppercase;
   }
@@ -66,9 +94,8 @@
   & .header__theme-menu {
     color: currentColor;
     font-family: var(--AccentFont);
-    font-weight: var(--FontWeightNormal);
-    font-size: 14px;
-    line-height: 1;
+    font-variation-settings: "wght" var(--FontWeightNormal);
+    font-size: var(--fontSizeSmall);
     text-transform: uppercase;
   }
 
@@ -91,11 +118,11 @@
     transition: opacity 0.3s;
   }
 
-  & .active {
+  & .theme-menu__button:disabled {
     opacity: 0.6;
   }
 
-  & .active::before {
+  & .theme-menu__button:disabled::before {
     content: url(../svg/arrow.svg);
     position: absolute;
     animation-name: arrowMove;
@@ -145,18 +172,17 @@
     right: 11px;
     color: var(--Themes-mainColor, #000);
     font-family: var(--AccentFont);
-    font-weight: var(--FontWeightNormal);
+    font-variation-settings: "wght" var(--FontWeightNormal);
     font-size: var(--fontSizeSmall);
     line-height: 1;
     text-transform: uppercase;
     opacity: 0.5;
     z-index: 2;
-    text-shadow: 1px 1px #fff;
   }
 
   @supports (-webkit-text-stroke: 1px #fff) {
     .card__img-lable {
-      -webkit-text-stroke: 1px #fff;
+      -webkit-text-stroke: var(--text-stroke-width) var(--text-stroke-color);
       text-shadow: none;
     }
   }
@@ -166,6 +192,7 @@
   }
 
   & .card__image {
+    width: 100%;
     object-fit: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -197,49 +224,71 @@
     font-size: var(--fontSizeDefault, 18px);
     font-variation-settings: "wght" var(--FontWeightNormal);
   }
-
-  & .card__like-button {
-    position: relative;
-    align-self: flex-end;
-    padding: 9px 17px;
-    font-family: var(--AccentFont);
-    font-weight: var(--FontWeightNormal);
-    line-height: 90%;
-    text-transform: capitalize;
-    border: 2px solid var(--Themes-mainColor, #000);
-  }
-
-  & .card__like-button::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -39px;
-    background-image: url(../svg/heart.svg);
-    width: 27px;
-    height: 24px;
-  }
 }
 
 /*END CARD*/
 
-/*Animation sector*/
+/*START BUTTON*/
+.button {
+  align-self: flex-end;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background-color: transparent;
 
-/*Стрелочка в меню*/
-@keyframes arrowMove {
-  0% {
-    inset-inline-start: 0;
+  & .button__text {
+    min-width: 133px;
+    text-transform: capitalize;
+    border: 2px solid var(--Themes-mainColor, #000);
+    padding: 9px 17px;
+    font-family: var(--AccentFont);
+    font-variation-settings: "wght" var(--FontWeightNormal);
+    line-height: 90%;
   }
-  25% {
-    inset-inline-start: 2px;
+
+  & .like-icon.is-liked .contur {
+    animation: var(--transition-times) contur forwards;
+    transform-origin: center center;
   }
-  50% {
-    inset-inline-start: 4px;
+
+  & .like-icon.is-liked .core {
+    animation: var(--transition-times) core forwards;
   }
-  75% {
-    inset-inline-start: 2px;
+
+  & .like-icon.is-liked .main-body {
+    animation: var(--transition-times) main-body forwards;
+    transform-origin: center center;
   }
-  100% {
-    inset-inline-start: 0;
+
+  & .like-icon.is-liked .sparks {
+    animation: var(--transition-times) sparks forwards;
   }
 }
+/*END BUTTON*/
+
+/*START FOOTER*/
+
+.footer {
+  padding: 54px 35px 102px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .footer__button {
+    border: 2px solid var(--Themes-mainColor, #000);
+    padding: 15px 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    font-family: var(--AccentFont);
+    font-size: var(--fontSizeSmall);
+    font-variation-settings: "wght" var(--FontWeightNormal);
+    line-height: 90%;
+  }
+}
+
+/*END FOOTER*/
+
