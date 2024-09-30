@@ -34,8 +34,23 @@
                 type="button"
                 data-theme="dark"
                 class="theme-menu__button"
+                index="1"
               >
-                Темно
+                <svg
+                  class="theme-menu__arrow"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.6"
+                    d="M0 12.25V0H1.75V1.75H5.25V3.5H8.75V5.25H12.25V7H8.75V8.75H5.25V10.5H1.75V12.25H0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>Темно</span>
               </button>
             </li>
             <li class="theme-menu__item">
@@ -44,17 +59,47 @@
                 data-theme="auto"
                 disabled
                 class="theme-menu__button"
+                index="2"
               >
-                Авто
+                <svg
+                  class="theme-menu__arrow"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.6"
+                    d="M0 12.25V0H1.75V1.75H5.25V3.5H8.75V5.25H12.25V7H8.75V8.75H5.25V10.5H1.75V12.25H0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>Авто</span>
               </button>
             </li>
             <li class="theme-menu__item">
               <button
-                type="button"
+                type="button button--flex"
                 data-theme="light"
                 class="theme-menu__button"
+                index="3"
               >
-                Светло
+                <svg
+                  class="theme-menu__arrow"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    opacity="0.6"
+                    d="M0 12.25V0H1.75V1.75H5.25V3.5H8.75V5.25H12.25V7H8.75V8.75H5.25V10.5H1.75V12.25H0Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>Светло</span>
               </button>
             </li>
           </ul>
@@ -85,7 +130,7 @@
             <p class="card__text">
               Место для ваших воспоминаний о начале обучения.
             </p>
-            <button class="button card__like-button" type="button">
+            <button class="button card__like-button" type="button" index="4">
               <svg
                 class="like-icon"
                 viewBox="0 0 41 38"
@@ -142,7 +187,7 @@
             <p class="card__text">
               Место для ваших воспоминаний о начале первого спринта.
             </p>
-            <button class="button card__like-button" type="button">
+            <button class="button card__like-button" type="button" index="5">
               <svg
                 class="like-icon"
                 viewBox="0 0 41 38"
@@ -195,7 +240,7 @@
             <p class="card__text">
               Место для ваших воспоминаний об окончании первого спринта.
             </p>
-            <button class="button card__like-button" type="button">
+            <button class="button card__like-button" type="button" index="6">
               <svg
                 class="like-icon"
                 viewBox="0 0 41 38"
@@ -252,7 +297,7 @@
             <p class="card__text">
               Место для ваших воспоминаний о начале второго спринта.
             </p>
-            <button class="button card__like-button" type="button">
+            <button class="button card__like-button" type="button" index="7">
               <svg
                 class="like-icon"
                 viewBox="0 0 41 38"
@@ -310,7 +355,7 @@
             <p class="card__text">
               Место для ваших воспоминаний об окончании второго спринта.
             </p>
-            <button class="button card__like-button" type="button">
+            <button class="button card__like-button" type="button" index="8">
               <svg
                 class="like-icon"
                 viewBox="0 0 41 38"
@@ -365,7 +410,7 @@
             <p class="card__text">
               Место для ваших воспоминаний о начале третьего спринта.
             </p>
-            <button class="button card__like-button" type="button">
+            <button class="button card__like-button" type="button" index="9">
               <svg
                 class="like-icon"
                 viewBox="0 0 41 38"
@@ -422,7 +467,7 @@
             <p class="card__text">
               Место для ваших воспоминаний об окончании третьего спринта.
             </p>
-            <button class="button card__like-button" type="button">
+            <button class="button card__like-button" type="button" index="10">
               <svg
                 class="like-icon"
                 viewBox="0 0 41 38"
@@ -481,7 +526,7 @@
               Место, чтобы остановиться, подумать и написать, что вы чувствуете
               в этой точке пути.
             </p>
-            <button class="button card__like-button" type="button">
+            <button class="button card__like-button" type="button" index="11">
               <svg
                 class="like-icon"
                 viewBox="0 0 41 38"
@@ -514,12 +559,13 @@
             </button>
           </div>
         </li>
+        <li class="card__item card__item-save">
+          <button class="card__icon-button" type="button" index="12">
+            Сохранить на память
+          </button>
+        </li>
       </ul>
     </main>
-
-    <footer class="footer themes-background container">
-      <button class="button footer__button" type="button"></button>
-    </footer>
 
     <script src="./scripts/like.js"></script>
   </body>

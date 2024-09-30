@@ -46,6 +46,7 @@
 
 }
 
+/*Вспышка звёзд сердца*/
 @keyframes sparks {
     0% { 
         fill: transparent;
@@ -58,6 +59,7 @@
     }
 }
 
+/*Заливка всего сердца*/
 @keyframes main-body {
     0% { 
         fill: transparent;
@@ -73,6 +75,7 @@
     }
 }
 
+/*Заливка контура сердца*/
 @keyframes contur {
     0% { 
         fill: #000;
@@ -85,5 +88,29 @@
     100% {
         fill: #FF0000;
         transform: scale(1.0);
+    }
+}
+
+/*Подчёркивающая линия в меню*/
+@keyframes draw-underline {
+
+    0% { 
+        transform: scaleX(0);
+    }
+
+    100% { 
+        transform: scaleX(1);
+    }
+}
+
+/*Заливка кнопки Like при hover*/
+
+@keyframes buttonFill {
+    0% { 
+        transform: scaleX(0);
+    }
+
+    100% { 
+        transform: scaleX(1);
     }
 }
