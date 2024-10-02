@@ -37,7 +37,7 @@
 @keyframes core {
     
     0% { 
-        fill: transparent;
+        fill: currentColor;
     }
 
     100% { 
@@ -49,13 +49,13 @@
 /*Вспышка звёзд сердца*/
 @keyframes sparks {
     0% { 
-        fill: transparent;
+        opacity: 0;
     }
     50% { 
-        fill: #FF0000;
+        opacity: 1;
     }
     100%{
-        fill: transparent;
+        opacity: 0;
     }
 }
 
@@ -63,27 +63,22 @@
 @keyframes main-body {
     0% { 
         fill: transparent;
-        transform: scale(1.0);
     }
-    50% { 
-        fill: #FF0000;
-        transform: scale(1.1);
-    }
+
     100% {
         fill: #FF0000;
-        transform: scale(1.0);
     }
 }
 
 /*Заливка контура сердца*/
 @keyframes contur {
     0% { 
-        fill: #000;
+        fill: currentColor;
         transform: scale(1.0);
     }
-    50% { 
-        fill: #FF0000;
+    50% {
         transform: scale(1.1);
+        transform-origin: center;
     }
     100% {
         fill: #FF0000;

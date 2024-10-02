@@ -5,32 +5,38 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 .theme-light {
-  --Themes-background: #fff;
-  --Themes-mainColor: #000;
+  --light-color: #fff;
+  --dark-color: #000;
+  
+  --Themes-background: var(--light-color);
+  --Themes-mainColor: var(--dark-color);
 
-  --bg-line-color-start: #fff;
+  --bg-line-color-start: var(--light-color:);
   --bg-line-color-end: transparent;
 
   --bg-cover-start: #E7E7E7;
   --bg-cover-end: #1A1A1A;
 
-  --text-stroke-color: #fff;
+  --text-stroke-color: var(--light-color:);
 
   --FontWeightNormal: 400;
   --FontWeightBold: 700;
 }
 
 .theme-dark {
-  --Themes-background: #000;
-  --Themes-mainColor: #00cc14;
+  --light-color: #00cc14;
+  --dark-color: #000;
 
-  --bg-line-color-start: #000;
+  --Themes-background: var(--dark-color);
+  --Themes-mainColor: var(--light-color);
+
+  --bg-line-color-start: var(--dark-color);
   --bg-line-color-end: transparent;
 
   --bg-cover-start: #007F0C;
   --bg-cover-end: #004306;
 
-  --text-stroke-color: #000;
+  --text-stroke-color: var(--dark-color);
 
   --FontWeightNormal: 465;
   --FontWeightBold: 700;

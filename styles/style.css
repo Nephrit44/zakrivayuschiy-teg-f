@@ -22,7 +22,6 @@
 1. Допиши альтернативный шрифт
 2. Не совсм понятно зачем нужно четыре переменных для шрифтов, когда можно обойтись двумя?
 
-
 */
 
 .container {
@@ -86,7 +85,7 @@
     color: currentColor;
     font-family: var(--AccentFont);
     font-variation-settings: "wght" var(--FontWeightNormal);
-    font-size: var(--fontSizeSmal);
+    font-size: var(--fontSizeSmall);
     text-align: center;
     text-transform: uppercase;
   }
@@ -262,10 +261,20 @@
   & .card__item-save {
     border: none;
     padding: 54px 32px 120px;
+    color: var(--Themes-mainColor, #000);
+    font-family: var(--AccentFont);
+    font-size: var(--fontSizeSmall);
+    font-weight: var(--FontWeightNormal);
+    line-height: 90%;
 
     & .card__icon-button {
       padding: 15px 19px;
       border: 1px solid currentColor;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
     }
   }
 }
@@ -301,6 +310,62 @@
     &:focus-visible {
       border: 2px solid black;
     }
+    & .sparks {
+      opacity: 0;
+    }
+
+    /*Красим сердцевину*/
+    & .like-icon .core {
+      fill: transparent;
+      transition: fill;
+      transition-duration: 0.3s;
+      transition-delay: 0.03s;
+      transition-timing-function: linear;
+    }
+
+    /*красим тело*/
+    & .like-icon .main-body {
+      fill: transparent;
+      transition: all;
+      transition-duration: 0.3s;
+      transition-delay: 0.05s;
+      transition-timing-function: linear;
+    }
+
+    & .like-icon:hover .core {
+      fill: var(--dark-color);
+    }
+
+    & .like-icon:hover .main-body {
+      fill: var(--dark-color);
+    }
+
+    & .like-icon:active .core {
+      fill: var(--active-heart-color);
+    }
+
+    & .like-icon:active .main-body {
+      fill: var(--active-heart-color);
+    }
+
+    & .like-icon.is-liked .core {
+      animation: 0.3s core forwards;
+    }
+
+    & .like-icon.is-liked .main-body {
+      animation: 0.3s main-body forwards;
+      animation-delay: 0.3s;
+    }
+
+    & .like-icon.is-liked .contur {
+      animation: 0.3s contur forwards;
+      animation-delay: 0.2s;
+    }
+
+    & .like-icon.is-liked .sparks {
+      animation: 0.3s sparks forwards;
+      animation-delay: 0.5s;
+    }
   }
 
   & .card__like-button {
@@ -335,35 +400,13 @@
       transform: translateX(0);
     }
 
-    & .button__text{
-     position: relative;
-     z-index: 3;
-     mix-blend-mode: difference;
-    color: var(--Themes-mainColor);
+    & .button__text {
+      position: relative;
+      z-index: 3;
+      mix-blend-mode: difference;
+      color: var(--light-color);
     }
   }
 }
 
 /*END BUTTON*/
-
-& .like-icon.is-liked .contur {
-  animation: var(--transition-times) contur forwards;
-  transform-origin: center center;
-}
-
-& .like-icon.is-liked .core {
-  animation: var(--transition-times) core forwards;
-}
-
-& .like-icon.is-liked .main-body {
-  animation: var(--transition-times) main-body forwards;
-  transform-origin: center center;
-}
-
-& .like-icon.is-liked .sparks {
-  animation: var(--transition-times) sparks forwards;
-}
-
-&:focus {
-  outline: none;
-}
