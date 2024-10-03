@@ -11,13 +11,13 @@
   --Themes-background: var(--light-color);
   --Themes-mainColor: var(--dark-color);
 
-  --bg-line-color-start: var(--light-color:);
+  --bg-line-color-start: var(--light-color);
   --bg-line-color-end: transparent;
 
   --bg-cover-start: #E7E7E7;
   --bg-cover-end: #1A1A1A;
 
-  --text-stroke-color: var(--light-color:);
+  --text-stroke-color: var(--light-color);
 
   --FontWeightNormal: 400;
   --FontWeightBold: 700;

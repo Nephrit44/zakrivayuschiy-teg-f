@@ -599,15 +599,36 @@
             </div>
           </div>
         </li>
-        <li class="card__item card__item-save">
-          <button class="card__icon-button" type="button" index="12">
-            <svg width="29" height="28" viewBox="0 0 29 28">
-              <use href="./svg/floppy.svg#floppy">
-            </svg> 
-            <span class="button__text">Сохранить на память</span>
-          </button>
-        </li>
       </ul>
+
+      <section class="save">
+        <button
+          class="button save__button"
+          type="button"
+          index="12"
+          onclick="window['dialog'].showModal();"
+          aria-controls="dialog"
+        >
+          <svg width="29" height="28" viewBox="0 0 29 28">
+            <use href="./svg/floppy.svg#floppy" />
+          </svg>
+          <span class="button__text">Сохранить на память</span>
+        </button>
+
+        <dialog class="dialog" id="dialog">
+          <div class="dialog__wrapper">
+            <div class="dialog__header">
+              <svg width="40" height="40" viewBox="0 0 40 40">
+                <use href="./svg/floppy.svg#floppy" />
+              </svg>
+              <h2 class="dialog__title">Вставьте дискету, чтобы продолжить</h2>
+            </div>
+            <form class="dialog__content">
+              <button class="dialog__button" type="submit">ok</button>
+            </form>
+          </div>
+        </dialog>
+      </section>
     </main>
 
     <script src="./scripts/like.js"></script>
