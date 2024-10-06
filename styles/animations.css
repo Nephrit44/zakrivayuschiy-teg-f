@@ -35,77 +35,74 @@
 /*Сердце возле кнопки*/
 
 @keyframes core {
-    
-    0% { 
-        fill: currentColor;
-    }
+  0% {
+    fill: currentColor;
+  }
 
-    100% { 
-        fill: #FF0000;
-    }
-
+  100% {
+    fill: #ff0000;
+  }
 }
 
 /*Вспышка звёзд сердца*/
 @keyframes sparks {
-    0% { 
-        opacity: 0;
-    }
-    50% { 
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*Заливка всего сердца*/
 @keyframes main-body {
-    0% { 
-        fill: transparent;
-    }
+  0% {
+    fill: transparent;
+  }
 
-    100% {
-        fill: #FF0000;
-    }
+  100% {
+    fill: #ff0000;
+  }
 }
 
 /*Заливка контура сердца*/
 @keyframes contur {
-    0% { 
-        fill: currentColor;
-        transform: scale(1.0);
-    }
-    50% {
-        transform: scale(1.1);
-        transform-origin: center;
-    }
-    100% {
-        fill: #FF0000;
-        transform: scale(1.0);
-    }
+  0% {
+    fill: currentColor;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+    transform-origin: center;
+  }
+  100% {
+    fill: #ff0000;
+    transform: scale(1);
+  }
 }
 
 /*Подчёркивающая линия в меню*/
 @keyframes draw-underline {
+  0% {
+    transform: scaleX(0);
+  }
 
-    0% { 
-        transform: scaleX(0);
-    }
-
-    100% { 
-        transform: scaleX(1);
-    }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 /*Заливка кнопки Like при hover*/
 
 @keyframes buttonFill {
-    0% { 
-        transform: scaleX(0);
-    }
+  0% {
+    transform: scaleX(0);
+  }
 
-    100% { 
-        transform: scaleX(1);
-    }
+  100% {
+    transform: scaleX(1);
+  }
 }
