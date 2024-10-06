@@ -4,7 +4,7 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
-.theme-light {
+html.theme-light {
   --light-color: #fff;
   --dark-color: #000;
   
@@ -17,13 +17,15 @@
   --bg-cover-start: #E7E7E7;
   --bg-cover-end: #1A1A1A;
 
+  --button-changeColor: var(--dark-color);
+
   --text-stroke-color: var(--light-color);
 
   --FontWeightNormal: 400;
   --FontWeightBold: 700;
 }
 
-.theme-dark {
+html.theme-dark {
   --light-color: #00cc14;
   --dark-color: #000;
 
@@ -36,8 +38,35 @@
   --bg-cover-start: #007F0C;
   --bg-cover-end: #004306;
 
+  --button-changeColor: var(--light-color);
+
   --text-stroke-color: var(--dark-color);
 
   --FontWeightNormal: 465;
   --FontWeightBold: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --light-color: #00cc14;
+    --dark-color: #000;
+  
+    --Themes-background: var(--dark-color);
+    --Themes-mainColor: var(--light-color);
+  
+    --bg-line-color-start: var(--dark-color);
+    --bg-line-color-end: transparent;
+  
+    --bg-cover-start: #007F0C;
+    --bg-cover-end: #004306;
+  
+    --button-changeColor: var(--light-color);
+    
+    --text-stroke-color: var(--dark-color);
+  
+    --FontWeightNormal: 465;
+    --FontWeightBold: 700;
+  }
+
 }

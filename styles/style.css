@@ -17,55 +17,54 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
-
-Напоминалка:
-1. Допиши альтернативный шрифт
-2. Не совсм понятно зачем нужно четыре переменных для шрифтов, когда можно обойтись двумя?
-
 */
 
 .container {
   min-width: 379px;
-  max-width: 696px;
+  max-width: 702px;
   margin: 0 auto;
 }
 
 .page {
-  font-family: var(--MainFont);
+  font-family: var(--MainFont, sans-serif);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--FontWeightNormal);
+  font-variation-settings: "wght" var(--FontWeightNormal, 400);
   background-color: var(--Themes-background, #fff);
-}
-
-/*START HEADER*/
-
-.header {
-  padding: 102px 0;
   background-image: repeating-linear-gradient(
       90deg,
-      var(--bg-line-color-start),
-      var(--bg-line-color-start) var(--bg-line-size),
-      var(--bg-line-color-end) var(--bg-line-size),
-      var(--bg-line-color-end) calc(var(--bg-line-size) * 2)
+      var(--bg-line-color-start, #fff),
+      var(--bg-line-color-start, #fff) var(--bg-line-size, 2px),
+      var(--bg-line-color-end, transparent) var(--bg-line-size, 2px),
+      var(--bg-line-color-end, transparent) calc(var(--bg-line-size, 4px) * 2)
     ),
     repeating-linear-gradient(
       180deg,
-      var(--bg-line-color-start),
-      var(--bg-line-color-start) var(--bg-line-size),
-      var(--bg-line-color-end) var(--bg-line-size),
-      var(--bg-line-color-end) calc(var(--bg-line-size) * 2)
+      var(--bg-line-color-start, #fff),
+      var(--bg-line-color-start, #fff) var(--bg-line-size, 2px),
+      var(--bg-line-color-end, transparent) var(--bg-line-size, 2px),
+      var(--bg-line-color-end, transparent) calc(var(--bg-line-size, 4px) * 2)
     ),
-    linear-gradient(180deg, var(--bg-cover-start) 0%, var(--bg-cover-end) 50%);
+    linear-gradient(
+      180deg,
+      var(--bg-cover-start, #e7e7e7) 0%,
+      var(--bg-cover-end, #1a1a1a) 50%
+    );
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
+}
+
+/*START HEADER*/
+
+.header {
+  padding: 100px 0 98px;
 
   & .header__content {
-    border: var(--border-size) solid currentColor;
-    padding: 120px 0 25px;
+    border: var(--border-size, 2px) solid currentColor;
+    padding: 136px 0 25px;
     color: var(--Themes-mainColor, #000);
     background-color: var(--Themes-background, #fff);
   }
@@ -73,9 +72,9 @@
   & .header__title {
     padding-block-end: 20px;
     color: currentColor;
-    font-family: var(--AccentFont);
-    font-variation-settings: "wght" var(--FontWeightBold);
-    font-size: var(--fontSizeTitle);
+    font-family: var(--AccentFont, sans-serif);
+    font-variation-settings: "wght" var(--FontWeightBold, 700);
+    font-size: clamp(3.0625rem, 1.9598rem + 4.8338vw, 4.0625rem);
     text-align: center;
     text-transform: uppercase;
   }
@@ -83,9 +82,9 @@
   & .header__subtitle {
     padding-block-end: 25px;
     color: currentColor;
-    font-family: var(--AccentFont);
-    font-variation-settings: "wght" var(--FontWeightNormal);
-    font-size: var(--fontSizeSmall);
+    font-family: var(--AccentFont, sans-serif);
+    font-variation-settings: "wght" var(--FontWeightNormal, 400);
+    font-size: clamp(0.875rem, 0.2547rem + 2.719vw, 1.4375rem);
     text-align: center;
     text-transform: uppercase;
   }
@@ -94,9 +93,9 @@
 /*NAV START*/
 .header__theme-menu {
   color: currentColor;
-  font-family: var(--AccentFont);
-  font-variation-settings: "wght" var(--FontWeightNormal);
-  font-size: var(--fontSizeSmall);
+  font-family: var(--AccentFont, sans-serif);
+  font-variation-settings: "wght" var(--FontWeightNormal, 400);
+  font-size: var(--fontSizeSmall, 14px);
   text-transform: uppercase;
 
   & .theme-menu__list {
@@ -111,18 +110,18 @@
 
   & .theme-menu__button {
     color: currentColor;
-    font-size: var(--fontSizeSmall);
+    font-size: var(--fontSizeSmall, 14px);
     text-transform: capitalize;
     text-transform: uppercase;
-    transition: opacity var(--transition-duration) ease;
+    transition: opacity var(--transition-duration, 0.3s) ease;
     padding-left: 19px;
 
     &:hover {
-      opacity: var(--opacity);
+      opacity: var(--opacity, 0.6);
     }
 
     &:disabled {
-      opacity: var(--opacity);
+      opacity: var(--opacity, 0.6);
       pointer-events: none;
 
       & .theme-menu__arrow {
@@ -136,13 +135,15 @@
 
     &:focus {
       outline: none;
-      opacity: var(--opacity);
+      opacity: var(--opacity, 0.6);
     }
 
     & .theme-menu__arrow {
       position: absolute;
       left: 1px;
       opacity: 0;
+      width: 13px;
+      height: 13px;
     }
 
     & span {
@@ -160,7 +161,7 @@
       }
 
       &:hover::after {
-        animation: var(--transition-duration) draw-underline forwards;
+        animation: var(--transition-duration, 0.3s) draw-underline forwards;
         transform-origin: top left;
       }
     }
@@ -172,31 +173,30 @@
 /*START CARD*/
 .card {
   color: var(--Themes-mainColor, #000);
-  background: var(--Themes-background, #fff);
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 47px;
 
   & .card__item {
     display: flex;
     flex-direction: column;
-    border: var(--border-size) solid currentColor;
+    background: var(--Themes-background, #fff);
+    border: var(--border-size, 2px) solid currentColor;
   }
 
   & .card__title {
     padding: 4px 10px;
     color: currentColor;
-    font-family: var(--MainFont);
+    font-family: var(--MainFont, sans-serif);
     font-size: var(--fontSizeDefault, 18px);
-    font-variation-settings: "wght" var(--FontWeightBold);
-    border-block-end: var(--border-size) solid currentColor;
+    font-variation-settings: "wght" var(--FontWeightBold, 700);
+    border-block-end: var(--border-size, 2px) solid currentColor;
   }
 
   & .card__img-wrapper {
     position: relative;
     display: flex;
     flex-shrink: 0;
-    overflow: hidden;
   }
 
   & .card__img-lable {
@@ -204,9 +204,9 @@
     top: 23px;
     right: 11px;
     color: var(--Themes-mainColor, #000);
-    font-family: var(--AccentFont);
-    font-variation-settings: "wght" var(--FontWeightNormal);
-    font-size: var(--fontSizeSmall);
+    font-family: var(--AccentFont, sans-serif);
+    font-variation-settings: "wght" var(--FontWeightNormal, 400);
+    font-size: var(--fontSizeSmall, 14px);
     line-height: 1;
     text-transform: uppercase;
     opacity: 0.5;
@@ -215,7 +215,8 @@
 
   @supports (-webkit-text-stroke: 1px #fff) {
     .card__img-lable {
-      -webkit-text-stroke: var(--text-stroke-width) var(--text-stroke-color);
+      -webkit-text-stroke: var(--text-stroke-width, 1px)
+        var(--text-stroke-color, #fff);
       text-shadow: none;
     }
   }
@@ -240,19 +241,36 @@
     filter: invert(1);
   }
 
+  & .card__image--hueRotate {
+    filter: hue-rotate(45deg);
+  }
+
+  & .card__image--sepia {
+    filter: sepia(1);
+  }
+
+  & .card__image--multiple {
+    filter: invert(1) blur(1px) hue-rotate(-43deg);
+  }
+
+  & .card__image--saturate {
+    filter: saturate(9);
+  }
+
   & .card__content {
     display: flex;
     flex-direction: column;
-    gap: 27px;
-    padding: 25px;
-    border-block-start: var(--border-size) solid currentColor;
+    row-gap: 26px;
+    padding: 27px 21px 25px 25px;
+    border-block-start: var(--border-size, 2px) solid currentColor;
   }
 
   & .card__text {
     color: currentColor;
-    font-family: var(--MainFont);
+    font-family: var(--MainFont, sans-serif);
     font-size: var(--fontSizeDefault, 18px);
-    font-variation-settings: "wght" var(--FontWeightNormal);
+    font-variation-settings: "wght" var(--FontWeightNormal, 400);
+    line-height: 116%;
   }
 }
 
@@ -261,11 +279,11 @@
 /*START SECTION SAVE*/
 .save {
   border: none;
-  padding: 54px 32px 120px;
+  padding: 48px 32px 120px;
   color: var(--Themes-mainColor, #000);
-  font-family: var(--AccentFont);
-  font-size: var(--fontSizeSmall);
-  font-weight: var(--FontWeightNormal);
+  font-family: var(--AccentFont, sans-serif);
+  font-size: var(--fontSizeSmall, 14px);
+  font-weight: var(--FontWeightNormal, 400);
   line-height: 90%;
   display: flex;
   justify-content: center;
@@ -275,11 +293,15 @@
     padding: 15px 19px;
     border: 1px solid currentColor;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    transition: box-shadow var(--transition-duration, 0.3s);
+
+    &:focus-visible {
+      box-shadow: 2px 2px 0px 0px var(--Themes-mainColor, #000);
+    }
   }
 
   & .dialog {
@@ -315,9 +337,9 @@
       }
 
       & .dialog__title {
-        font-family: var(--AccentFont);
-        font-size: var(--fontSizeSmall);
-        font-weight: var(--FontWeightNormal);
+        font-family: var(--AccentFont, sans-serif);
+        font-size: var(--fontSizeSmall, 14px);
+        font-weight: var(--FontWeightNormal, 400);
         line-height: 150%;
         text-transform: uppercase;
       }
@@ -334,12 +356,17 @@
         border: 2px solid var(--Themes-mainColor, #000);
         background: var(--Themes-background, #fff);
         color: var(--Themes-mainColor, #000);
-        font-family: var(--AccentFont);
-        font-size: var(--fontSizeSmall);
-        font-weight: var(--FontWeightNormal);
+        font-family: var(--AccentFont, sans-serif);
+        font-size: var(--fontSizeSmall, 14px);
+        font-weight: var(--FontWeightNormal, 400);
         line-height: 90%;
         text-transform: uppercase;
         cursor: pointer;
+        transition: box-shadow var(--transition-duration);
+
+        &:focus-visible {
+          box-shadow: 2px 2px 0px 0px var(--Themes-mainColor, #000);
+        }
       }
     }
   }
@@ -353,17 +380,18 @@
   overflow: hidden;
   text-transform: capitalize;
   border: 2px solid var(--Themes-mainColor, #000);
-  font-family: var(--AccentFont);
-  font-variation-settings: "wght" var(--FontWeightNormal);
+  font-family: var(--AccentFont, sans-serif);
+  font-variation-settings: "wght" var(--FontWeightNormal, 400);
   line-height: 90%;
   color: var(--Themes-mainColor, #000);
+  background: var(--Themes-background, #fff);
 }
 
 .button--changeColor::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #000;
+  background-color: var(--button-changeColor, #000);
   transform: translateX(-100%);
   transition: transform 0.5s ease-in-out;
   z-index: 2;
@@ -374,21 +402,40 @@
   transform: translateX(0);
 }
 
+.button__text {
+  color: var(--Themes-mainColor, #000);
+  font-family: var(--AccentFont, sans-serif);
+  font-size: var(--fontSizeSmall, 14px);
+  font-weight: var(--FontWeightNormal, 400);
+  line-height: 90%;
+  text-transform: math-auto;
+}
+
 .button__text,
 .floppy {
   position: relative;
   z-index: 3;
   mix-blend-mode: difference;
-  color: var(--light-color);
+  color: var(--light-color, #fff);
+}
+
+.floppy--small {
+  width: 29px;
+  height: 28px;
+}
+
+.floppy--large {
+  width: 40px;
+  height: 40px;
 }
 
 .card__content-group {
   /*Группа для кнопок*/
   display: flex;
   justify-content: end;
-  gap: 12px;
   align-items: center;
   background-color: transparent;
+  padding: 0 25px 25px 25px;
 
   & .button:focus {
     outline: none;
@@ -401,70 +448,76 @@
   & .card__icon-button {
     /*Кнопка с иконкой*/
     font-size: 0;
-    border: 2px solid transparent;
+    border: var(--border-size, 2px) solid transparent;
 
     & :focus {
       outline: none;
     }
 
     &:focus-visible {
-      border: 2px solid black;
+      border: var(--border-size, 2px) solid var(--dark-color, #000);
+      box-shadow: 2px 2px 0px 0px var(--Themes-mainColor, #000);
     }
     & .sparks {
       opacity: 0;
     }
 
-    /*Красим сердцевину*/
-    & .like-icon .core {
-      fill: transparent;
-      transition: fill;
-      transition-duration: 0.3s;
-      transition-delay: 0.03s;
-      transition-timing-function: linear;
-    }
+    & .like-icon {
+      width: 41px;
+      height: 36px;
 
-    /*красим тело*/
-    & .like-icon .main-body {
-      fill: transparent;
-      transition: all;
-      transition-duration: 0.3s;
-      transition-delay: 0.05s;
-      transition-timing-function: linear;
-    }
+      /*Красим сердцевину*/
+      & .core {
+        fill: transparent;
+        transition: fill;
+        transition-duration: 0.3s;
+        transition-delay: 0.03s;
+        transition-timing-function: linear;
+      }
 
-    & .like-icon:hover .core {
-      fill: var(--dark-color);
-    }
+      /*красим тело*/
+      & .main-body {
+        fill: transparent;
+        transition: all;
+        transition-duration: 0.3s;
+        transition-delay: 0.05s;
+        transition-timing-function: linear;
+      }
 
-    & .like-icon:hover .main-body {
-      fill: var(--dark-color);
-    }
+      &:hover .core {
+        fill: var(--dark-color, #000);
+      }
 
-    & .like-icon:active .core {
-      fill: var(--active-heart-color);
-    }
+      &:hover .main-body {
+        fill: var(--dark-color, #000);
+      }
 
-    & .like-icon:active .main-body {
-      fill: var(--active-heart-color);
-    }
+      &:active .core {
+        fill: var(--active-heart-color, #ff0000);
+      }
 
-    & .like-icon.is-liked .core {
-      animation: 0.3s core forwards;
-    }
+      &:active .main-body {
+        fill: var(--active-heart-color, #ff0000);
+      }
 
-    & .like-icon.is-liked .main-body {
-      animation: 0.3s main-body forwards;
-      animation-delay: 0.3s;
-    }
+      &.is-liked .core {
+        animation: 0.3s core forwards;
+      }
 
-    & .like-icon.is-liked .contur {
-      animation: 0.3s contur forwards;
-      animation-delay: 0.2s;
-    }
+      &.is-liked .main-body {
+        animation: 0.3s main-body forwards;
+        animation-delay: 0.3s;
+      }
 
-    & .like-icon.is-liked .sparks {
-      animation: 0.3s sparks forwards;
-      animation-delay: 0.5s;
+      &.is-liked .contur {
+        animation: 0.3s contur forwards;
+        animation-delay: 0.2s;
+      }
+
+      &.is-liked .sparks {
+        animation: 0.3s sparks forwards;
+        animation-delay: 0.5s;
+      }
     }
   }
 
@@ -474,9 +527,27 @@
     padding: 11px 17px;
 
     &:focus-visible {
-      box-shadow: 2px 2px 0px 0px var(--Themes-mainColor);
+      box-shadow: 2px 2px 0px 0px var(--Themes-mainColor, #000);
     }
   }
 }
 
 /*END BUTTON*/
+
+@media (width <= 409px) {
+  .header .header__content {
+    padding: 120px 0 25px;
+  }
+
+  .card {
+    gap: 46px;
+  }
+  
+  .card .card__content {
+    padding-right: 29px;
+  }
+
+  .save__button {
+    flex-direction: column;
+  }
+}
