@@ -95,6 +95,17 @@
   }
 }
 
+/*Подчёркивающая линия в меню в обратку*/
+@keyframes draw-underline-back {
+    0% {
+      transform: scaleX(1);
+    }
+  
+    100% {
+      transform: scaleX(0);
+    }
+  }
+
 /*Заливка кнопки Like при hover*/
 
 @keyframes buttonFill {

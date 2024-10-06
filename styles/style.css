@@ -29,21 +29,21 @@
   font-family: var(--MainFont, sans-serif);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--FontWeightNormal, 400);
+  font-variation-settings: "wght" var(--FontWeightNormal-wght, 400);
   background-color: var(--Themes-background, #fff);
   background-image: repeating-linear-gradient(
       90deg,
       var(--bg-line-color-start, #fff),
       var(--bg-line-color-start, #fff) var(--bg-line-size, 2px),
       var(--bg-line-color-end, transparent) var(--bg-line-size, 2px),
-      var(--bg-line-color-end, transparent) calc(var(--bg-line-size, 4px) * 2)
+      var(--bg-line-color-end, transparent) calc(var(--bg-line-size, 2px) * 2)
     ),
     repeating-linear-gradient(
       180deg,
       var(--bg-line-color-start, #fff),
       var(--bg-line-color-start, #fff) var(--bg-line-size, 2px),
       var(--bg-line-color-end, transparent) var(--bg-line-size, 2px),
-      var(--bg-line-color-end, transparent) calc(var(--bg-line-size, 4px) * 2)
+      var(--bg-line-color-end, transparent) calc(var(--bg-line-size, 2px) * 2)
     ),
     linear-gradient(
       180deg,
@@ -73,7 +73,7 @@
     padding-block-end: 20px;
     color: currentColor;
     font-family: var(--AccentFont, sans-serif);
-    font-variation-settings: "wght" var(--FontWeightBold, 700);
+    font-variation-settings: "wght" var(--FontWeightBold-wght, 700);
     font-size: clamp(3.0625rem, 1.9598rem + 4.8338vw, 4.0625rem);
     text-align: center;
     text-transform: uppercase;
@@ -83,7 +83,7 @@
     padding-block-end: 25px;
     color: currentColor;
     font-family: var(--AccentFont, sans-serif);
-    font-variation-settings: "wght" var(--FontWeightNormal, 400);
+    font-weight: var(--FontWeightNormal, 400);
     font-size: clamp(0.875rem, 0.2547rem + 2.719vw, 1.4375rem);
     text-align: center;
     text-transform: uppercase;
@@ -94,7 +94,7 @@
 .header__theme-menu {
   color: currentColor;
   font-family: var(--AccentFont, sans-serif);
-  font-variation-settings: "wght" var(--FontWeightNormal, 400);
+  font-weight: var(--FontWeightNormal, 400);
   font-size: var(--fontSizeSmall, 14px);
   text-transform: uppercase;
 
@@ -119,6 +119,19 @@
       opacity: var(--opacity, 0.6);
     }
 
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      opacity: var(--opacity, 0.6);
+    }
+
+    &:focus-visible .theme-menu__text::after {
+      animation: var(--transition-duration, 0.3s) draw-underline forwards;
+      transform-origin: top left;
+    }
+
     &:disabled {
       opacity: var(--opacity, 0.6);
       pointer-events: none;
@@ -132,11 +145,6 @@
       }
     }
 
-    &:focus {
-      outline: none;
-      opacity: var(--opacity, 0.6);
-    }
-
     & .theme-menu__arrow {
       position: absolute;
       left: 1px;
@@ -145,18 +153,21 @@
       height: 13px;
     }
 
-    & span {
+    & .theme-menu__text {
       position: relative;
 
       /*Подчёркивание*/
       &::after {
         content: "";
         position: absolute;
-        border: 2px solid currentColor;
-        inset-block-end: -4px;
+        border: 1px solid currentColor;
+        inset-block-end: -2px;
         inset-inline-start: 0;
         width: 100%;
         transform: scaleX(0);
+        animation: var(--transition-duration, 0.3s) draw-underline-back forwards;
+        transform-origin: left top;
+        background-color: #ff0000;
       }
 
       &:hover::after {
@@ -188,7 +199,7 @@
     color: currentColor;
     font-family: var(--MainFont, sans-serif);
     font-size: var(--fontSizeDefault, 18px);
-    font-variation-settings: "wght" var(--FontWeightBold, 700);
+    font-weight: var(--FontWeightBold, 700);
     border-block-end: var(--border-size, 2px) solid currentColor;
   }
 
@@ -204,7 +215,7 @@
     right: 11px;
     color: var(--Themes-mainColor, #000);
     font-family: var(--AccentFont, sans-serif);
-    font-variation-settings: "wght" var(--FontWeightNormal, 400);
+    font-weight: var(--FontWeightNormal, 400);
     font-size: var(--fontSizeSmall, 14px);
     line-height: 1;
     text-transform: uppercase;
@@ -268,7 +279,7 @@
     color: currentColor;
     font-family: var(--MainFont, sans-serif);
     font-size: var(--fontSizeDefault, 18px);
-    font-variation-settings: "wght" var(--FontWeightNormal, 400);
+    font-weight: var(--FontWeightNormal, 400);
     line-height: 116%;
   }
 }
@@ -295,7 +306,6 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    cursor: pointer;
     transition: box-shadow var(--transition-duration, 0.3s);
 
     &:focus-visible {
@@ -314,7 +324,7 @@
 
     &::backdrop {
       opacity: 0.75;
-      background: var(--Themes-mainColor, #000);
+      background: #000;
     }
 
     & .dialog__wrapper {
@@ -360,7 +370,6 @@
         font-weight: var(--FontWeightNormal, 400);
         line-height: 90%;
         text-transform: uppercase;
-        cursor: pointer;
         transition: box-shadow var(--transition-duration);
 
         &:focus-visible {
@@ -380,10 +389,11 @@
   text-transform: capitalize;
   border: 2px solid var(--Themes-mainColor, #000);
   font-family: var(--AccentFont, sans-serif);
-  font-variation-settings: "wght" var(--FontWeightNormal, 400);
-  line-height: 90%;
+  font-weight: var(--FontWeightNormal, 400);
   color: var(--Themes-mainColor, #000);
   background: var(--Themes-background, #fff);
+  cursor: pointer;
+  border: 1px solid transparent;
 }
 
 .button--changeColor::before {
@@ -432,6 +442,7 @@
   /*Группа для кнопок*/
   display: flex;
   justify-content: end;
+  column-gap: 12px;
   align-items: center;
   background-color: transparent;
   padding: 0 25px 25px 25px;
@@ -484,11 +495,11 @@
       }
 
       &:hover .core {
-        fill: var(--dark-color, #000);
+        fill: var(--Themes-mainColor, #000);
       }
 
       &:hover .main-body {
-        fill: var(--dark-color, #000);
+        fill: var(--Themes-mainColor, #000);
       }
 
       &:active .core {
@@ -541,7 +552,7 @@
   .card {
     gap: 46px;
   }
-  
+
   .card .card__content {
     padding-right: 29px;
   }

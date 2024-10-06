@@ -17,14 +17,20 @@
 
   --MainFont: Inter;
   --AccentFont: PressStart2P;
+
   --FontWeightNormal: 400;
   --FontWeightBold: 700;
+
+  --FontWeightNormal-wght: 465;
+  --FontWeightBold-wght: 785;
+
+
   --border-size: 2px;
 
   --fontSizeSmall: 14px;
   --fontSizeDefault: 18px;
   
-  --bg-line-size: 4px; /*Ширина полоски для декорирования фона*/
+  --bg-line-size: 2px; /*Ширина полоски для декорирования фона*/
   --transition-times: 2s;
 
   --text-stroke-color: var(--light-color);

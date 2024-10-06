@@ -20,9 +20,6 @@ html.theme-light {
   --button-changeColor: var(--dark-color);
 
   --text-stroke-color: var(--light-color);
-
-  --FontWeightNormal: 400;
-  --FontWeightBold: 700;
 }
 
 html.theme-dark {
@@ -41,9 +38,6 @@ html.theme-dark {
   --button-changeColor: var(--light-color);
 
   --text-stroke-color: var(--dark-color);
-
-  --FontWeightNormal: 465;
-  --FontWeightBold: 700;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,9 +58,6 @@ html.theme-dark {
     --button-changeColor: var(--light-color);
     
     --text-stroke-color: var(--dark-color);
-  
-    --FontWeightNormal: 465;
-    --FontWeightBold: 700;
   }
 
 }
