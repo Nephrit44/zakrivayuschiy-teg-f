@@ -26,29 +26,26 @@
 }
 
 .page {
-  font-family: var(--MainFont, sans-serif);
+  font-family: var(--mainFont, sans-serif);
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--FontWeightNormal-wght, 400);
-  background-color: var(--Themes-background, #fff);
+  font-variation-settings: "wght" var(--font-weight-normal-wght, 400);
+  background-color: var(--themes-background, #fff);
   background-image: repeating-linear-gradient(
       90deg,
-      var(--bg-line-color-start, #fff),
-      var(--bg-line-color-start, #fff) var(--bg-line-size, 2px),
-      var(--bg-line-color-end, transparent) var(--bg-line-size, 2px),
-      var(--bg-line-color-end, transparent) calc(var(--bg-line-size, 2px) * 2)
+      var(--bg-midle-color, #d3d3d3) 0 var(--bg-line-size, 2px),
+      rgb(0 0 0 / 0) var(--bg-line-size, 2px) calc(var(--bg-line-size, 2px) * 2)
     ),
     repeating-linear-gradient(
       180deg,
-      var(--bg-line-color-start, #fff),
-      var(--bg-line-color-start, #fff) var(--bg-line-size, 2px),
-      var(--bg-line-color-end, transparent) var(--bg-line-size, 2px),
-      var(--bg-line-color-end, transparent) calc(var(--bg-line-size, 2px) * 2)
+      var(--bg-midle-color, #d3d3d3) 0 var(--bg-line-size, 2px),
+      rgb(0 0 0 / 0) var(--bg-line-size, 2px) calc(var(--bg-line-size, 2px) * 2)
     ),
     linear-gradient(
       180deg,
-      var(--bg-cover-start, #e7e7e7) 0%,
-      var(--bg-cover-end, #1a1a1a) 50%
+      var(--bg-light-color, #e7e7e7) 0%,
+      var(--bg-light-color, #e7e7e7) 0.01%,
+      var(--bg-dark-color, #1a1a1a) 100%
     );
   background-repeat: no-repeat;
   background-position: center;
@@ -65,25 +62,26 @@
   & .header__content {
     border: var(--border-size, 2px) solid currentColor;
     padding: 136px 0 25px;
-    color: var(--Themes-mainColor, #000);
-    background-color: var(--Themes-background, #fff);
+    color: var(--themes-mainColor, #000);
+    background-color: var(--themes-background, #fff);
   }
 
   & .header__title {
     padding-block-end: 20px;
     color: currentColor;
-    font-family: var(--AccentFont, sans-serif);
-    font-variation-settings: "wght" var(--FontWeightBold-wght, 700);
+    font-family: var(--accentFont, sans-serif);
+    font-variation-settings: "wght" var(--font-weight-bold-wght, 700);
     font-size: clamp(3.0625rem, 1.9598rem + 4.8338vw, 4.0625rem);
     text-align: center;
     text-transform: uppercase;
+    display: block;
   }
 
   & .header__subtitle {
     padding-block-end: 25px;
     color: currentColor;
-    font-family: var(--AccentFont, sans-serif);
-    font-weight: var(--FontWeightNormal, 400);
+    font-family: var(--accentFont, sans-serif);
+    font-weight: var(--font-weight-normal, 400);
     font-size: clamp(0.875rem, 0.2547rem + 2.719vw, 1.4375rem);
     text-align: center;
     text-transform: uppercase;
@@ -93,8 +91,8 @@
 /*NAV START*/
 .header__theme-menu {
   color: currentColor;
-  font-family: var(--AccentFont, sans-serif);
-  font-weight: var(--FontWeightNormal, 400);
+  font-family: var(--accentFont, sans-serif);
+  font-weight: var(--font-weight-normal, 400);
   font-size: var(--fontSizeSmall, 14px);
   text-transform: uppercase;
 
@@ -182,7 +180,7 @@
 
 /*START CARD*/
 .card {
-  color: var(--Themes-mainColor, #000);
+  color: var(--themes-mainColor, #000);
   display: flex;
   flex-direction: column;
   gap: 49px;
@@ -190,16 +188,16 @@
   & .card__item {
     display: flex;
     flex-direction: column;
-    background: var(--Themes-background, #fff);
+    background: var(--themes-background, #fff);
     border: var(--border-size, 2px) solid currentColor;
   }
 
   & .card__title {
     padding: 4px 12px;
     color: currentColor;
-    font-family: var(--MainFont, sans-serif);
+    font-family: var(--mainFont, sans-serif);
     font-size: var(--fontSizeDefault, 18px);
-    font-weight: var(--FontWeightBold, 700);
+    font-weight: var(--font-weight-bold, 700);
     border-block-end: var(--border-size, 2px) solid currentColor;
   }
 
@@ -213,18 +211,20 @@
     position: absolute;
     top: 25px;
     right: 25px;
-    color: var(--Themes-mainColor, #000);
-    font-family: var(--AccentFont, sans-serif);
-    font-weight: var(--FontWeightNormal, 400);
+    color: var(--themes-mainColor, #000);
+    font-family: var(--accentFont, sans-serif);
+    font-weight: var(--font-weight-normal, 400);
     font-size: var(--fontSizeSmall, 14px);
     line-height: 1;
     text-transform: uppercase;
     opacity: 0.5;
     z-index: 2;
+    text-shadow: 3px 3px 2px var(--light-color, #fff);
   }
 
-  @supports (-webkit-text-stroke: 1px #fff) {
+  @supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
     .card__img-lable {
+      text-stroke: var(--text-stroke-width, 1px) var(--text-stroke-color, #fff);
       -webkit-text-stroke: var(--text-stroke-width, 1px)
         var(--text-stroke-color, #fff);
       text-shadow: none;
@@ -283,9 +283,9 @@
 
   & .card__text {
     color: currentColor;
-    font-family: var(--MainFont, sans-serif);
+    font-family: var(--mainFont, sans-serif);
     font-size: var(--fontSizeDefault, 18px);
-    font-weight: var(--FontWeightNormal, 400);
+    font-weight: var(--font-weight-normal, 400);
     line-height: 116%;
   }
 }
@@ -296,10 +296,10 @@
 .save {
   border: none;
   padding: 45px 32px 102px;
-  color: var(--Themes-mainColor, #000);
-  font-family: var(--AccentFont, sans-serif);
+  color: var(--themes-mainColor, #000);
+  font-family: var(--accentFont, sans-serif);
   font-size: var(--fontSizeSmall, 14px);
-  font-weight: var(--FontWeightNormal, 400);
+  font-weight: var(--font-weight-normal, 400);
   line-height: 90%;
   display: flex;
   justify-content: center;
@@ -315,16 +315,20 @@
     transition: box-shadow var(--transition-duration, 0.3s);
 
     &:focus-visible {
-      box-shadow: 2px 2px 0px 0px var(--Themes-mainColor, #000);
+      box-shadow: 2px 2px 0px 0px var(--themes-mainColor, #000);
+    }
+
+    & .button__text--math-auto {
+      text-transform: math-auto;
     }
   }
 
-  & .dialog {
+  & .dialog[open] {
     padding: 31px;
     max-width: 351px;
     max-height: 193px;
-    border: 2px solid var(--Themes-mainColor, #000);
-    background: var(--Themes-background, #fff);
+    border: 2px solid var(--themes-mainColor, #000);
+    background: var(--themes-background, #fff);
 
     &::backdrop {
       opacity: 0.75;
@@ -342,7 +346,7 @@
     & .dialog__header {
       display: flex;
       gap: 20px;
-      color: var(--Themes-mainColor, #000);
+      color: var(--themes-mainColor, #000);
 
       & svg {
         align-self: center;
@@ -350,9 +354,9 @@
       }
 
       & .dialog__title {
-        font-family: var(--AccentFont, sans-serif);
+        font-family: var(--accentFont, sans-serif);
         font-size: var(--fontSizeSmall, 14px);
-        font-weight: var(--FontWeightNormal, 400);
+        font-weight: var(--font-weight-normal, 400);
         line-height: 150%;
         text-transform: uppercase;
       }
@@ -366,18 +370,18 @@
 
       & .dialog__button {
         padding: 9px 17px;
-        border: 2px solid var(--Themes-mainColor, #000);
-        background: var(--Themes-background, #fff);
-        color: var(--Themes-mainColor, #000);
-        font-family: var(--AccentFont, sans-serif);
+        border: 2px solid var(--themes-mainColor, #000);
+        background: var(--themes-background, #fff);
+        color: var(--themes-mainColor, #000);
+        font-family: var(--accentFont, sans-serif);
         font-size: var(--fontSizeSmall, 14px);
-        font-weight: var(--FontWeightNormal, 400);
+        font-weight: var(--font-weight-normal, 400);
         line-height: 90%;
         text-transform: uppercase;
         transition: box-shadow var(--transition-duration);
 
         &:focus-visible {
-          box-shadow: 2px 2px 0px 0px var(--Themes-mainColor, #000);
+          box-shadow: 2px 2px 0px 0px var(--themes-mainColor, #000);
         }
       }
     }
@@ -391,11 +395,11 @@
   position: relative;
   overflow: hidden;
   text-transform: capitalize;
-  border: 2px solid var(--Themes-mainColor, #000);
-  font-family: var(--AccentFont, sans-serif);
-  font-weight: var(--FontWeightNormal, 400);
-  color: var(--Themes-mainColor, #000);
-  background: var(--Themes-background, #fff);
+  border: 2px solid var(--themes-mainColor, #000);
+  font-family: var(--accentFont, sans-serif);
+  font-weight: var(--font-weight-normal, 400);
+  color: var(--themes-mainColor, #000);
+  background: var(--themes-background, #fff);
   cursor: pointer;
   border: 1px solid transparent;
 }
@@ -416,10 +420,10 @@
 }
 
 .button__text {
-  color: var(--Themes-mainColor, #000);
-  font-family: var(--AccentFont, sans-serif);
+  color: var(--themes-mainColor, #000);
+  font-family: var(--accentFont, sans-serif);
   font-size: var(--fontSizeSmall, 14px);
-  font-weight: var(--FontWeightNormal, 400);
+  font-weight: var(--font-weight-normal, 400);
   line-height: 90%;
   text-transform: capitalize;
 }
@@ -468,7 +472,7 @@
 
     &:focus-visible {
       border: var(--border-size, 2px) solid var(--dark-color, #000);
-      box-shadow: 2px 2px 0px 0px var(--Themes-mainColor, #000);
+      box-shadow: 2px 2px 0px 0px var(--themes-mainColor, #000);
     }
     & .sparks {
       opacity: 0;
@@ -497,11 +501,11 @@
       }
 
       &:hover .core {
-        fill: var(--Themes-mainColor, #000);
+        fill: var(--themes-mainColor, #000);
       }
 
       &:hover .main-body {
-        fill: var(--Themes-mainColor, #000);
+        fill: var(--themes-mainColor, #000);
       }
 
       &:active .core {
@@ -540,7 +544,7 @@
     border: var(--border-size) solid currentColor;
 
     &:focus-visible {
-      box-shadow: 2px 2px 0px 0px var(--Themes-mainColor, #000);
+      box-shadow: 2px 2px 0px 0px var(--themes-mainColor, #000);
     }
   }
 }

@@ -4,25 +4,20 @@
   --dark-color: #000;
   --active-heart-color: #FF0000;
 
-  --Themes-background: var(--light-color);
-  --Themes-mainColor: var(--dark-color);
+  --themes-background: var(--light-color);
+  --themes-mainColor: var(--dark-color);
 
-  --bg-line-color-start: var(--light-color);
-  --bg-line-color-end: transparent;
-
-  --bg-cover-start: #E7E7E7;
-  --bg-cover-end: #1A1A1A;
+  --bg-light-color: #E7E7E7;
+  --bg-midle-color: #d3d3d3;
+  --bg-dark-color: #1A1A1A;
 
   --button-changeColor: var(--dark-color);
 
-  --MainFont: Inter;
-  --AccentFont: PressStart2P;
+  --mainFont: Inter;
+  --accentFont: PressStart2P;
 
-  --FontWeightNormal: 400;
-  --FontWeightBold: 700;
-
-  --FontWeightNormal-wght: 465;
-  --FontWeightBold-wght: 785;
+  --font-weight-normal-wght: 465;
+  --font-weight-bold-wght: 785;
 
 
   --border-size: 2px;

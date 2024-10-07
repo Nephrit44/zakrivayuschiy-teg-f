@@ -8,14 +8,15 @@ html.theme-light {
   --light-color: #fff;
   --dark-color: #000;
   
-  --Themes-background: var(--light-color);
-  --Themes-mainColor: var(--dark-color);
+  --themes-background: var(--light-color);
+  --themes-mainColor: var(--dark-color);
 
-  --bg-line-color-start: var(--light-color);
-  --bg-line-color-end: transparent;
+  --bg-light-color: #E7E7E7;
+  --bg-midle-color: #d3d3d3;
+  --bg-dark-color: #1A1A1A;
 
-  --bg-cover-start: #E7E7E7;
-  --bg-cover-end: #1A1A1A;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 
   --button-changeColor: var(--dark-color);
 
@@ -26,14 +27,15 @@ html.theme-dark {
   --light-color: #00cc14;
   --dark-color: #000;
 
-  --Themes-background: var(--dark-color);
-  --Themes-mainColor: var(--light-color);
+  --themes-background: var(--dark-color);
+  --themes-mainColor: var(--light-color);
 
-  --bg-line-color-start: var(--dark-color);
-  --bg-line-color-end: transparent;
+  --bg-light-color: #007f0c;
+  --bg-midle-color: #000;
+  --bg-dark-color:  #004306;
 
-  --bg-cover-start: #007F0C;
-  --bg-cover-end: #004306;
+  --font-weight-normal: 465;
+  --font-weight-bold: 785;
 
   --button-changeColor: var(--light-color);
 
@@ -46,15 +48,16 @@ html.theme-dark {
     --light-color: #00cc14;
     --dark-color: #000;
   
-    --Themes-background: var(--dark-color);
-    --Themes-mainColor: var(--light-color);
+    --themes-background: var(--dark-color);
+    --themes-mainColor: var(--light-color);
   
-    --bg-line-color-start: var(--dark-color);
-    --bg-line-color-end: transparent;
+    --bg-light-color: #007f0c;
+    --bg-midle-color: #000;
+    --bg-dark-color:  #004306;
   
-    --bg-cover-start: #007F0C;
-    --bg-cover-end: #004306;
-  
+    --font-weight-normal: 465;
+    --font-weight-bold: 785;
+
     --button-changeColor: var(--light-color);
     
     --text-stroke-color: var(--dark-color);
