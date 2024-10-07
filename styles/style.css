@@ -20,8 +20,8 @@
 */
 
 .container {
-  min-width: 379px;
-  max-width: 702px;
+  min-width: 320px;
+  max-width: 696px;
   margin: 0 auto;
 }
 
@@ -103,7 +103,7 @@
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    gap: 14px;
+    gap: 12px;
     max-width: 100px;
     margin: 0 auto;
   }
@@ -130,6 +130,7 @@
     &:focus-visible .theme-menu__text::after {
       animation: var(--transition-duration, 0.3s) draw-underline forwards;
       transform-origin: top left;
+      font-size: 24px;
     }
 
     &:disabled {
@@ -160,14 +161,13 @@
       &::after {
         content: "";
         position: absolute;
-        border: 1px solid currentColor;
-        inset-block-end: -2px;
+        border-bottom: 1px solid currentColor;
+        height: 100%;
         inset-inline-start: 0;
         width: 100%;
         transform: scaleX(0);
         animation: var(--transition-duration, 0.3s) draw-underline-back forwards;
         transform-origin: left top;
-        background-color: #ff0000;
       }
 
       &:hover::after {
@@ -185,7 +185,7 @@
   color: var(--Themes-mainColor, #000);
   display: flex;
   flex-direction: column;
-  gap: 47px;
+  gap: 49px;
 
   & .card__item {
     display: flex;
@@ -195,7 +195,7 @@
   }
 
   & .card__title {
-    padding: 4px 10px;
+    padding: 4px 12px;
     color: currentColor;
     font-family: var(--MainFont, sans-serif);
     font-size: var(--fontSizeDefault, 18px);
@@ -211,8 +211,8 @@
 
   & .card__img-lable {
     position: absolute;
-    top: 23px;
-    right: 11px;
+    top: 25px;
+    right: 25px;
     color: var(--Themes-mainColor, #000);
     font-family: var(--AccentFont, sans-serif);
     font-weight: var(--FontWeightNormal, 400);
@@ -267,11 +267,17 @@
     filter: saturate(9);
   }
 
+  & .card__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 27px;
+  }
+
   & .card__content {
     display: flex;
     flex-direction: column;
-    row-gap: 26px;
-    padding: 27px 21px 25px 25px;
+    row-gap: 24px;
+    padding: 32px 24px 25px 25px;
     border-block-start: var(--border-size, 2px) solid currentColor;
   }
 
@@ -289,7 +295,7 @@
 /*START SECTION SAVE*/
 .save {
   border: none;
-  padding: 48px 32px 120px;
+  padding: 45px 32px 102px;
   color: var(--Themes-mainColor, #000);
   font-family: var(--AccentFont, sans-serif);
   font-size: var(--fontSizeSmall, 14px);
@@ -315,9 +321,7 @@
 
   & .dialog {
     padding: 31px;
-    min-width: 341px;
-    min-height: 195px;
-    max-width: 357px;
+    max-width: 351px;
     max-height: 193px;
     border: 2px solid var(--Themes-mainColor, #000);
     background: var(--Themes-background, #fff);
@@ -417,7 +421,7 @@
   font-size: var(--fontSizeSmall, 14px);
   font-weight: var(--FontWeightNormal, 400);
   line-height: 90%;
-  text-transform: math-auto;
+  text-transform: capitalize;
 }
 
 .button__text,
@@ -438,14 +442,11 @@
   height: 40px;
 }
 
-.card__content-group {
+.card__footer {
   /*Группа для кнопок*/
   display: flex;
   justify-content: end;
-  column-gap: 12px;
   align-items: center;
-  background-color: transparent;
-  padding: 0 25px 25px 25px;
 
   & .button:focus {
     outline: none;
@@ -459,6 +460,7 @@
     /*Кнопка с иконкой*/
     font-size: 0;
     border: var(--border-size, 2px) solid transparent;
+    padding-right: 4px;
 
     & :focus {
       outline: none;
@@ -533,8 +535,9 @@
 
   & .card__like-button {
     /*Кнопка с текстом*/
-    min-width: 134px;
-    padding: 11px 17px;
+    min-width: 127px;
+    padding: 9px 17px;
+    border: var(--border-size) solid currentColor;
 
     &:focus-visible {
       box-shadow: 2px 2px 0px 0px var(--Themes-mainColor, #000);
@@ -549,15 +552,26 @@
     padding: 120px 0 25px;
   }
 
-  .card {
-    gap: 46px;
-  }
-
   .card .card__content {
-    padding-right: 29px;
+    padding-top: 28px;
+    padding-right: 28px;
   }
 
   .save__button {
     flex-direction: column;
+  }
+
+  .card .card__img-lable {
+    top: 23px;
+    right: 11px;
+  }
+
+  .save {
+    padding-top: 53px;
+
+    & .dialog {
+      max-width: 336px;
+      max-height: 195px;
+    }
   }
 }
