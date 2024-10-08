@@ -28,6 +28,7 @@ li {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 button,
@@ -54,10 +55,4 @@ ol {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-}
-
-a {
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
 }

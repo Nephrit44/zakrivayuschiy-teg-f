@@ -84,7 +84,6 @@
     padding-block-end: 25px;
     color: currentColor;
     font-family: var(--accentFont, sans-serif);
-
     font-size: clamp(0.875rem, 0.2547rem + 2.719vw, 1.4375rem);
     text-align: center;
     text-transform: uppercase;
@@ -359,7 +358,6 @@
       & .dialog__title {
         font-family: var(--accentFont, sans-serif);
         font-size: var(--fontSizeSmall, 14px);
-
         line-height: 150%;
         text-transform: uppercase;
       }
@@ -378,7 +376,6 @@
         color: var(--themes-mainColor, #000);
         font-family: var(--accentFont, sans-serif);
         font-size: var(--fontSizeSmall, 14px);
-
         line-height: 90%;
         text-transform: uppercase;
         transition: box-shadow var(--transition-duration);
@@ -400,7 +397,6 @@
   text-transform: capitalize;
   border: 2px solid var(--themes-mainColor, #000);
   font-family: var(--accentFont, sans-serif);
-
   color: var(--themes-mainColor, #000);
   background: var(--themes-background, #fff);
   cursor: pointer;
@@ -426,7 +422,6 @@
   color: var(--themes-mainColor, #000);
   font-family: var(--accentFont, sans-serif);
   font-size: var(--fontSizeSmall, 14px);
-
   line-height: 90%;
   text-transform: capitalize;
 }
