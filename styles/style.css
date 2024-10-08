@@ -260,7 +260,7 @@
   }
 
   & .card__image--multiple {
-    filter: invert(1) blur(1px) hue-rotate(-43deg);
+    filter: invert(2) hue-rotate(-43deg);
   }
 
   & .card__image--saturate {
