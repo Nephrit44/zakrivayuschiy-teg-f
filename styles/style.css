@@ -395,7 +395,6 @@
   position: relative;
   overflow: hidden;
   text-transform: capitalize;
-  border: 2px solid var(--themes-mainColor, #000);
   font-family: var(--accentFont, sans-serif);
   color: var(--themes-mainColor, #000);
   background: var(--themes-background, #fff);
