@@ -267,6 +267,10 @@
     filter: saturate(9);
   }
 
+  & .card__image--blur {
+    filter: blur(3px);
+  }
+
   & .card__body {
     display: flex;
     flex-direction: column;
