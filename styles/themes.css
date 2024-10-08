@@ -15,6 +15,9 @@ html.theme-light {
   --bg-midle-color: #d3d3d3;
   --bg-dark-color: #1A1A1A;
 
+  --font-weight-normal-wght: 400;
+  --font-weight-bold-wght: 700;
+
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
@@ -33,6 +36,9 @@ html.theme-dark {
   --bg-light-color: #007f0c;
   --bg-midle-color: #000;
   --bg-dark-color:  #004306;
+
+  --font-weight-normal-wght: 465;
+  --font-weight-bold-wght: 785;
 
   --font-weight-normal: 465;
   --font-weight-bold: 785;
@@ -55,6 +61,9 @@ html.theme-dark {
     --bg-midle-color: #000;
     --bg-dark-color:  #004306;
   
+    --font-weight-normal-wght: 465;
+    --font-weight-bold-wght: 785;
+
     --font-weight-normal: 465;
     --font-weight-bold: 785;
 

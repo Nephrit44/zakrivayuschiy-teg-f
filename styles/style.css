@@ -21,7 +21,7 @@
 
 .container {
   min-width: 320px;
-  max-width: 696px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -52,12 +52,16 @@
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
+
+  & .large-letters {
+    text-transform: uppercase;
+  }
 }
 
 /*START HEADER*/
 
 .header {
-  padding: 100px 0 98px;
+  padding: 100px 0 99px;
 
   & .header__content {
     border: var(--border-size, 2px) solid currentColor;
@@ -70,7 +74,6 @@
     padding-block-end: 20px;
     color: currentColor;
     font-family: var(--accentFont, sans-serif);
-    font-variation-settings: "wght" var(--font-weight-bold-wght, 700);
     font-size: clamp(3.0625rem, 1.9598rem + 4.8338vw, 4.0625rem);
     text-align: center;
     text-transform: uppercase;
@@ -81,7 +84,7 @@
     padding-block-end: 25px;
     color: currentColor;
     font-family: var(--accentFont, sans-serif);
-    font-weight: var(--font-weight-normal, 400);
+
     font-size: clamp(0.875rem, 0.2547rem + 2.719vw, 1.4375rem);
     text-align: center;
     text-transform: uppercase;
@@ -92,7 +95,7 @@
 .header__theme-menu {
   color: currentColor;
   font-family: var(--accentFont, sans-serif);
-  font-weight: var(--font-weight-normal, 400);
+
   font-size: var(--fontSizeSmall, 14px);
   text-transform: uppercase;
 
@@ -183,7 +186,7 @@
   color: var(--themes-mainColor, #000);
   display: flex;
   flex-direction: column;
-  gap: 49px;
+  row-gap: 50px;
 
   & .card__item {
     display: flex;
@@ -197,7 +200,7 @@
     color: currentColor;
     font-family: var(--mainFont, sans-serif);
     font-size: var(--fontSizeDefault, 18px);
-    font-weight: var(--font-weight-bold, 700);
+    font-variation-settings: "wght" var(--font-weight-bold-wght, 700);
     border-block-end: var(--border-size, 2px) solid currentColor;
   }
 
@@ -213,13 +216,15 @@
     right: 25px;
     color: var(--themes-mainColor, #000);
     font-family: var(--accentFont, sans-serif);
-    font-weight: var(--font-weight-normal, 400);
+
     font-size: var(--fontSizeSmall, 14px);
     line-height: 1;
-    text-transform: lowercase;
     opacity: 0.5;
     z-index: 2;
     text-shadow: 3px 3px 2px var(--light-color, #fff);
+    &:not(.large-letters) {
+      text-transform: lowercase;
+    }
   }
 
   @supports (-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff) {
@@ -272,8 +277,8 @@
   & .card__content {
     display: flex;
     flex-direction: column;
-    row-gap: 24px;
-    padding: 32px 24px 25px 25px;
+    row-gap: 21px;
+    padding: 25px;
     border-block-start: var(--border-size, 2px) solid currentColor;
   }
 
@@ -281,12 +286,7 @@
     color: currentColor;
     font-family: var(--mainFont, sans-serif);
     font-size: var(--fontSizeDefault, 18px);
-    font-weight: var(--font-weight-normal, 400);
-    line-height: 116%;
-  }
-
-  & .large-letters {
-    text-transform: uppercase;
+    line-height: 21px;
   }
 }
 
@@ -295,11 +295,11 @@
 /*START SECTION SAVE*/
 .save {
   border: none;
-  padding: 45px 32px 102px;
+  padding: 47px 32px 102px;
   color: var(--themes-mainColor, #000);
   font-family: var(--accentFont, sans-serif);
   font-size: var(--fontSizeSmall, 14px);
-  font-weight: var(--font-weight-normal, 400);
+
   line-height: 90%;
   display: flex;
   justify-content: center;
@@ -359,7 +359,7 @@
       & .dialog__title {
         font-family: var(--accentFont, sans-serif);
         font-size: var(--fontSizeSmall, 14px);
-        font-weight: var(--font-weight-normal, 400);
+
         line-height: 150%;
         text-transform: uppercase;
       }
@@ -378,7 +378,7 @@
         color: var(--themes-mainColor, #000);
         font-family: var(--accentFont, sans-serif);
         font-size: var(--fontSizeSmall, 14px);
-        font-weight: var(--font-weight-normal, 400);
+
         line-height: 90%;
         text-transform: uppercase;
         transition: box-shadow var(--transition-duration);
@@ -400,7 +400,7 @@
   text-transform: capitalize;
   border: 2px solid var(--themes-mainColor, #000);
   font-family: var(--accentFont, sans-serif);
-  font-weight: var(--font-weight-normal, 400);
+
   color: var(--themes-mainColor, #000);
   background: var(--themes-background, #fff);
   cursor: pointer;
@@ -426,7 +426,7 @@
   color: var(--themes-mainColor, #000);
   font-family: var(--accentFont, sans-serif);
   font-size: var(--fontSizeSmall, 14px);
-  font-weight: var(--font-weight-normal, 400);
+
   line-height: 90%;
   text-transform: capitalize;
 }
@@ -474,14 +474,16 @@
     }
 
     &:focus-visible {
-      border: var(--border-size, 2px) solid var(--dark-color, #000);
+      border: var(--border-size, 2px) solid var(--themes-mainColor, #000);
       box-shadow: 2px 2px 0px 0px var(--themes-mainColor, #000);
     }
+
     & .sparks {
       opacity: 0;
     }
 
     & .like-icon {
+      fill: var(--themes-mainColor);
       width: 41px;
       height: 36px;
 
@@ -542,7 +544,7 @@
 
   & .card__like-button {
     /*Кнопка с текстом*/
-    min-width: 127px;
+    min-width: 130px;
     padding: 9px 17px;
     border: var(--border-size) solid currentColor;
 
@@ -559,9 +561,18 @@
     padding: 120px 0 25px;
   }
 
-  .card .card__content {
-    padding-top: 28px;
-    padding-right: 28px;
+  .card {
+    row-gap: 49px;
+
+    & .card__content {
+      row-gap: 22px;
+      padding-top: 25px;
+      padding-right: 28px;
+    }
+
+    & .card__like-button {
+      min-width: 129px;
+    }
   }
 
   .save__button {
