@@ -1,17 +1,15 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --light-color: #fff;
-  --dark-color: #000;
   --active-heart-color: #FF0000;
 
-  --themes-background: var(--light-color);
-  --themes-mainColor: var(--dark-color);
+  --themes-background: #fff;
+  --themes-mainColor: #000;
 
   --bg-light-color: #E7E7E7;
   --bg-midle-color: #d3d3d3;
   --bg-dark-color: #1A1A1A;
 
-  --button-changeColor: var(--dark-color);
+  --button-mix-blend: #fff;
 
   --mainFont: Inter;
   --accentFont: PressStart2P;
@@ -27,7 +25,7 @@
   --bg-line-size: 2px; /*Ширина полоски для декорирования фона*/
   --transition-times: 2s;
 
-  --text-stroke-color: var(--light-color);
+  --text-stroke-color: #fff;
   --text-stroke-width: 1px;
 
   --opacity: 0.6;

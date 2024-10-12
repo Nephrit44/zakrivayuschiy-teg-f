@@ -5,11 +5,8 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 html.theme-light {
-  --light-color: #fff;
-  --dark-color: #000;
-  
-  --themes-background: var(--light-color);
-  --themes-mainColor: var(--dark-color);
+  --themes-background: #fff;
+  --themes-mainColor: #000;
 
   --bg-light-color: #E7E7E7;
   --bg-midle-color: #d3d3d3;
@@ -18,17 +15,14 @@ html.theme-light {
   --font-weight-normal-wght: 400;
   --font-weight-bold-wght: 700;
 
-  --button-changeColor: var(--dark-color);
+  --button-mix-blend: #fff;
 
-  --text-stroke-color: var(--light-color);
+  --text-stroke-color: #fff;
 }
 
 html.theme-dark {
-  --light-color: #00cc14;
-  --dark-color: #000;
-
-  --themes-background: var(--dark-color);
-  --themes-mainColor: var(--light-color);
+  --themes-background: #000;
+  --themes-mainColor: #00cc14;
 
   --bg-light-color: #007f0c;
   --bg-midle-color: #000;
@@ -37,19 +31,16 @@ html.theme-dark {
   --font-weight-normal-wght: 465;
   --font-weight-bold-wght: 785;
 
-  --button-changeColor: var(--light-color);
+  --button-mix-blend: #00cc14;
 
-  --text-stroke-color: var(--dark-color);
+  --text-stroke-color: #000;
 }
 
 @media (prefers-color-scheme: dark) {
 
   :root {
-    --light-color: #00cc14;
-    --dark-color: #000;
-  
-    --themes-background: var(--dark-color);
-    --themes-mainColor: var(--light-color);
+    --themes-background: #000;
+    --themes-mainColor: #00cc14;
   
     --bg-light-color: #007f0c;
     --bg-midle-color: #000;
@@ -58,9 +49,9 @@ html.theme-dark {
     --font-weight-normal-wght: 465;
     --font-weight-bold-wght: 785;
 
-    --button-changeColor: var(--light-color);
+    --button-mix-blend: #00cc14;
     
-    --text-stroke-color: var(--dark-color);
+    --text-stroke-color: #000;
   }
 
 }
