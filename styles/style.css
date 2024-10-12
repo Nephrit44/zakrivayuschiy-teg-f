@@ -431,7 +431,7 @@
 }
 
 .button__text {
-  color: currentColor;
+  color: var(--themes-mainColor);
   font-family: var(--accentFont, sans-serif);
   font-size: var(--fontSizeSmall, 14px);
   line-height: 90%;
