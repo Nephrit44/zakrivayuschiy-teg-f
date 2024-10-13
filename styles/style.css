@@ -490,62 +490,59 @@
       width: 39px;
       height: 36px;
 
-      /*Красим сердцевину*/
-      & .core {
+      /*START CORE*/
+      & .core { /*Исходное состояние core*/
         fill: transparent;
-        transition: fill;
-        transition-delay: 0.03s;
-        transition-timing-function: linear;
+        transition: fill 0.03s linear; /*Время возврата*/
       }
 
-      /*красим тело*/
-      & .main-body {
+      &:hover .core { /*Покраска core при HOVER*/
+        fill: var(--themes-mainColor, #000);
+        transition: fill 0.3s linear; /*Время покраски*/
+      }
+
+      &:active .core,
+      &.is-liked .core { /*Покраска core при УДЕРЖАНИИ и КЛИКЕ*/
+        fill: var(--active-heart-color, #ff0000);
+        transition: fill 0.3s linear;
+      }
+      /*END CORE*/
+
+
+      /*START MAIN-BODY*/
+      & .main-body { /*Исходное состояние тела*/
         fill: transparent;
-        transition: fill;
-        transition-duration: 0.3s;
-        transition-timing-function: linear;
+        transition: fill 0.3s linear; /*Время возврата*/
       }
 
-      &:hover .core {
+      &:hover .main-body { /*Покраска тела при HOVER*/
         fill: var(--themes-mainColor, #000);
-        transition-duration: 0.03s;
+        transition: fill 0.3s linear; /*Время покраски*/
+        transition-delay: 0.05s; /*Задержка перед покраской*/
       }
 
-      &:hover .main-body {
-        transition-delay: 0.05s;
-        fill: var(--themes-mainColor, #000);
-      }
-
-      &:active .core {
+      &:active .main-body,
+      &.is-liked .main-body { /*Покраска тела при УДЕРЖАНИИ и КЛИКЕ*/
         fill: var(--active-heart-color, #ff0000);
-        transition-duration: 0.03s;
+        transition: fill 0.3s linear; /*Время покраски*/
+        transition-delay: 0.05s; /*Задержка перед покраской*/
       }
+      /*END MAIN-BODY*/
 
-      &:active .main-body {
+      &.is-liked .contur { /*Перекраска контура */
         fill: var(--active-heart-color, #ff0000);
+        transition: fill 0.3s linear; /*Время покраски*/
+        transition-delay: 0.06s; /*Задержка перед покраской*/
       }
 
-      &.is-liked .core {
-        animation: 0.3s core forwards;
-      }
-
-      &.is-liked .main-body {
-        animation: 0.3s main-body forwards;
-        animation-delay: 0.2s;
-      }
-
-      &.is-liked .contur {
-        animation: 0.3s contur forwards;
-        animation-delay: 0.2s;
-      }
-      
       &.is-liked .heart {
-        animation: 0.3s heart-scale forwards;
-        animation-delay: 0.2s;
+        animation: 0.3s heart-scale ease-in;
+        animation-delay: 0.1s; /*Задержка перед масштабирование*/
+        transform-origin: center;
       }
 
       &.is-liked .sparks {
-        animation: 0.3s sparks forwards;
+        animation: 0.3s sparks ease-in;
         animation-delay: 0.3s;
       }
     }

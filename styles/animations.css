@@ -32,17 +32,6 @@
   }
 }
 
-/*Сердце возле кнопки*/
-
-@keyframes core {
-  0% {
-    fill: currentColor;
-  }
-
-  100% {
-    fill: #ff0000;
-  }
-}
 
 /*Вспышка звёзд сердца*/
 @keyframes sparks {
@@ -57,44 +46,13 @@
   }
 }
 
-/*Заливка всего сердца*/
-@keyframes main-body {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: #ff0000;
-  }
-}
-
-/*Заливка контура сердца*/
-@keyframes contur {
-  0% {
-    fill: currentColor;
-    /*transform: scale(1);*/
-  }
-  50% {
-    /*transform: scale(1.1);
-    transform-origin: center;*/
-  }
-  100% {
-    fill: #ff0000;
-    /*transform: scale(1);*/
-  }
-}
-
 /*Увеличение сердца*/
 @keyframes heart-scale {
   0% {
     transform: scale(1);
   }
-  50% {
-    transform: scale(1.1);
-    transform-origin: center;
-  }
   100% {
-    transform: scale(1);
+    transform: scale(1.5);
   }
 }
 
@@ -103,7 +61,6 @@
   0% {
     transform: scaleX(0);
   }
-
   100% {
     transform: scaleX(1);
   }
