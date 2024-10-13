@@ -530,7 +530,7 @@
       /*END MAIN-BODY*/
 
       & .contur { /*Исходное состояние контура*/
-        fill: var(--Themes-mainColor, #000);
+        fill: var(--themes-mainColor, #000);
         transition: fill 0.01s linear; /*Время возврата*/
       }
 
