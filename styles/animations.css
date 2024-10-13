@@ -72,6 +72,21 @@
 @keyframes contur {
   0% {
     fill: currentColor;
+    /*transform: scale(1);*/
+  }
+  50% {
+    /*transform: scale(1.1);
+    transform-origin: center;*/
+  }
+  100% {
+    fill: #ff0000;
+    /*transform: scale(1);*/
+  }
+}
+
+/*Увеличение сердца*/
+@keyframes heart-scale {
+  0% {
     transform: scale(1);
   }
   50% {
@@ -79,7 +94,6 @@
     transform-origin: center;
   }
   100% {
-    fill: #ff0000;
     transform: scale(1);
   }
 }

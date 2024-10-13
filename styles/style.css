@@ -304,7 +304,7 @@
 /*START SECTION SAVE*/
 .save {
   border: none;
-  padding-top: 57px;
+  padding-top: 49px;
   margin: 0 auto;
   padding-bottom: 100px;
   display: flex;
@@ -316,7 +316,7 @@
   }
 
   & .save__button {
-    padding: 13px 16px;
+    padding: 12px 17px;
     border: var(--border-size) solid var(--themes-mainColor, #000);
     display: flex;
     justify-content: center;
@@ -538,6 +538,11 @@
         animation: 0.3s contur forwards;
         animation-delay: 0.2s;
       }
+      
+      &.is-liked .heart {
+        animation: 0.3s heart-scale forwards;
+        animation-delay: 0.2s;
+      }
 
       &.is-liked .sparks {
         animation: 0.3s sparks forwards;
@@ -580,11 +585,14 @@
   }
 
   .save {
-    padding-top: 53px;
+    padding-top: 50px;
+
+    & .save__button {
+      padding: 15px 20px;
+    }
 
     & .dialog[open] {
       max-width: 336px;
-      max-height: 193px;
     }
   }
 }
